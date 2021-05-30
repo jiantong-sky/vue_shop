@@ -35,7 +35,7 @@
                         </template>
                         <!-- 二级导航栏 -->
                         <el-menu-item
-                            @click="saveNavState('/' + item.path)"
+                            @click="saveNavState('/' + subItem.path)"
                             :index="'/' + subItem.path"
                             v-for="subItem in item.children"
                             :key="subItem.id"
@@ -101,6 +101,7 @@ export default {
         },
         // 保存链接的激活状态
         saveNavState(url) {
+            // console.log(url)
             window.sessionStorage.setItem('url', url)
             this.activePath = url
         },
