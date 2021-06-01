@@ -5,8 +5,18 @@ body,
     height: 100%;
     margin: 0;
     padding: 0;
+    min-width: 1366px;
 }
 
 .el-breadcrumb {
     margin-bottom: 15px;
+}
+
+/* .el-table__expand-column .cell {
+    display: none !important;
+} */
+
+.hide {
+    overflow: hidden !important;
+    background-color: #ebeef5 !important;
 }
