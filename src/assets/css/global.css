@@ -20,3 +20,7 @@ body,
     overflow: hidden !important;
     background-color: #ebeef5 !important;
 }
+
+.el-cascader-panel {
+    height: 300px !important;
+}
