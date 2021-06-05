@@ -52,7 +52,7 @@
                 </el-menu>
             </el-aside>
             <!-- 右侧主体部分 -->
-            <el-main>
+            <el-main :style="isCollapse ? mainClass : ''">
                 <router-view></router-view>
             </el-main>
         </el-container>
@@ -63,6 +63,9 @@
 export default {
     data() {
         return {
+            mainClass: {
+                left: 64 + 'px',
+            },
             // 左侧菜单栏数据
             menulist: [],
             // 图标
@@ -118,6 +121,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
     > div {
         display: flex;
         align-items: center;
@@ -130,12 +134,24 @@ export default {
 }
 .el-aside {
     background-color: #dcdfe6;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    bottom: 0;
     .el-menu {
         border-right: none;
     }
 }
 .el-main {
     background-color: #f3f2f2;
+    display: block;
+    position: absolute;
+    left: 200px;
+    top: 80px;
+    right: 0;
+    bottom: 0;
+    overflow: scroll;
 }
 .fold-menu {
     height: 25px;
